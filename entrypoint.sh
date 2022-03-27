@@ -50,6 +50,14 @@ if [ -z "${GFX_PATH}" ]; then
   echo "GFX_PATH ENV is missing. Not modifying any image URLs"
 fi
 
+if [ -z "$CAPITALIZE_FIRST_LETTER" ]; then
+  echo "Don't capitalize first letter in Markdown's names"
+  CAPITALIZE=0
+else
+  echo "Capitalize first letter in Markdown's names"
+  CAPITALIZE=1
+fi
+
 mkdir $TEMP_CLONE_FOLDER
 cd $TEMP_CLONE_FOLDER
 git init
@@ -63,6 +71,11 @@ for i in $FILES; do
     realFileName=${i}
     if [[ $TRANSLATE -ne 0 ]]; then
         realFileName=${i//_/ }
+    fi
+    if [[ $CAPITALIZE -ne 0 ]]; then
+        realFileName=${realFileName^}
+    fi
+    if [ "$realFileName" = "$i" ]; then
         echo "$i -> $realFileName"
     else
         echo $realFileName

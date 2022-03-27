@@ -53,6 +53,7 @@ Copy the secret key of the Token and the secret in Settings -> Secrets -> Add ne
 * **WIKI_PUSH_MESSAGE**: (optional - sample message will use instead) Custom push message for your wiki pages.
 * **TRANSLATE_UNDERSCORE_TO_SPACE** (optional) Will translate the underscore in Markdown's names to spaces in your Wiki (disabled by default)
 * **GFX_PATH** (optional - no image support by default) Will modify all image URLs that point to files in the specified directory to absolute web URLs in every copied Markdown file for automatic image support.
+* **CAPITALIZE_FIRST_LETTER** (optional) Will translate capitalize the first letter in Markdown's names in your Wiki (disabled by default)
 
 ## Full Example (with additional actions to generate content)
 
