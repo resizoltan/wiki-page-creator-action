@@ -2,6 +2,8 @@
 
 TEMP_CLONE_FOLDER="temp_wiki"
 
+sudo apt-get upgrade sed
+
 if [ -z "$ACTION_MAIL" ]; then
   echo "ACTION_MAIL ENV is missing"
   exit 1
