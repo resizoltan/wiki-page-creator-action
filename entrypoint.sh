@@ -73,7 +73,7 @@ for i in $FILES; do
         realFileName=${i//_/ }
     fi
     if [[ $CAPITALIZE -ne 0 ]]; then
-        realFileName=$(echo $realFileName | sed -E 's;^([0-9]*\.?[_ ]?)(.*);\1\u\2;')
+        realFileName=$(echo $realFileName | sed -E 's;^([0-9]*[_ ]?)(.*);\1\u\2;' | 's;^([0-9]+)([_ ]?.*);\1.\2;')
     fi
     if [ "$realFileName" = "$i" ]; then
         echo $realFileName
